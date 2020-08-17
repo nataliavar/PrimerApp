@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">PrimeraApp</string>
+    <string name="email">Email</string>
+    <string name="psw">Password</string>
+    <string name="go_to_register">Go to register</string>
+    <string name="login">Login</string>
+
+    <string name="error_email">Email is required</string>
+    <string name="error_psw">Password is required</string>
+    <string name="error_name">Name is required</string>
+
+    <string name="logged_in">Logged in</string>
+    <string name="no_match">The fields don´t match</string>
+    <string name="name">Name</string>
+    <string name="register">Register</string>
+    <string name="go_to_login">Go to login</string>
+    <string name="register_done">Done!</string>
+
+
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PrimeraApp</string>
+    <string name="email">Correo electrónico</string>
+    <string name="psw">Contraseña</string>
+    <string name="go_to_register">Registrarse</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="error_email">Se necesita correo electronico</string>
+    <string name="error_psw">Se necesita contraseña</string>
+    <string name="error_name">Name is required</string>
+
+    <string name="logged_in">Inicio de sesión</string>
+    <string name="no_match">Los credenciales no coinciden</string>
+    <string name="name">Nombre</string>
+    <string name="register">Registrar</string>
+    <string name="go_to_login">Ir a inicio de sesión</string>
+    <string name="register_done">Listo!</string>
+
+</resources>
