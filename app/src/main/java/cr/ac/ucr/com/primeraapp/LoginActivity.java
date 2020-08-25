@@ -8,11 +8,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import cr.ac.ucr.com.primeraapp.Utils.AppPreferences;
+
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     public EditText etEmail;
     public EditText etPassword;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +21,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         etEmail = findViewById(R.id.et_email);
         etPassword = findViewById(R.id.et_password);
+
     }
 
     @Override
@@ -52,6 +54,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if (email.equalsIgnoreCase( "admin@gmail.com") && password.equalsIgnoreCase("123")){
 
             //TODO: almacenar en el storage de usuario logueado
+
+            AppPreferences.getInstance(this).put(AppPreferences.Keys.IS_LOGGED_IN, true);
 
             Toast.makeText(this, R.string.logged_in, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, MainActivity.class);
