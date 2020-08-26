@@ -13,6 +13,7 @@ public class AppPreferences {
 
     public static class Keys{
         public static final String IS_LOGGED_IN ="is_logged_in";
+        public static final String ITEMS ="items";
     }
 
     private AppPreferences(Context context){
