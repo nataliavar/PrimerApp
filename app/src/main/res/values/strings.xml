@@ -24,5 +24,9 @@
     <string name="yes">yes</string>
     <string name="no">no</string>
     <string name="clean_list">Clean list</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="profile">Profile</string>
+    <string name="my_task">My task</string>
 
 </resources>

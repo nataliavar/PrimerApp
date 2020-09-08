@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,9 +8,14 @@
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/abl_appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        >
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -23,23 +28,26 @@
             app:popupTheme="@style/Theme.AppCompat.Light"/>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <ListView
-        android:id="@+id/lv_todos"
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_pager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/abl_appbar"
+        android:layout_above="@+id/bnv_btn_menu"/>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_add_todo"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bnv_btn_menu"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:clickable="true"
-        android:focusable="true"
-        app:backgroundTint="@color/Black"
-        app:srcCompat="@drawable/ic_add"
-        android:onClick="onClick"/>
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bottom_nav_back"
+        app:itemIconTint="@drawable/bottom_nav_item_back"
+        app:itemTextColor="@drawable/bottom_nav_item_back"
+        app:menu="@menu/buttom_menu"
+        />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</RelativeLayout>

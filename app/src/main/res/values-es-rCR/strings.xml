@@ -24,4 +24,6 @@
     <string name="yes">si</string>
     <string name="no">no</string>
     <string name="clean_list">Borrar la lista</string>
+    <string name="profile">Perfil</string>
+    <string name="my_task">Mis tareas</string>
 </resources>
