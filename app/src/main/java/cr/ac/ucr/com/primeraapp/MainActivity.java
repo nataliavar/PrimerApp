@@ -20,11 +20,13 @@ import java.util.ArrayList;
 
 import cr.ac.ucr.com.primeraapp.Utils.AppPreferences;
 import cr.ac.ucr.com.primeraapp.adapters.MainViewPagerAdapter;
+import cr.ac.ucr.com.primeraapp.fragments.ProfileFragment;
 import cr.ac.ucr.com.primeraapp.fragments.ToDoListFragment;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private  ViewPager pager;
     private BottomNavigationView bottomNavigationView;
+    private MenuItem prvMenuItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +47,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private  void setUpViewPager(){
         ArrayList<Fragment> fragments = new ArrayList<>();
 
+        //importar los fragments
         fragments.add(ToDoListFragment.newInstance());
-        fragments.add(ToDoListFragment.newInstance());
+        fragments.add(ProfileFragment.newInstance());
 
         MainViewPagerAdapter mainViewPagerAdapter = new MainViewPagerAdapter(getSupportFragmentManager(), fragments);
 
@@ -73,7 +76,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void setUpViewPagerListener() {
+        pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            //se debe agregar los tres metodos porque es interfaz
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                if (prvMenuItem != null){
+                    prvMenuItem.setChecked(false);
+                }
+                bottomNavigationView.getMenu().getItem(position).setChecked(true);
+                prvMenuItem = bottomNavigationView.getMenu().getItem(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
     /*se necesita este metodo para mostrar el menu*/
